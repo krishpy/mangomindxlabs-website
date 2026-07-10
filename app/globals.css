@@ -1,8 +1,37 @@
 @import "tailwindcss";
 
+/*
+  MangomindX Labs Design System v1
+  Brand direction:
+  - Clean white canvas
+  - Deep slate typography
+  - Mango orange as primary action color
+  - Leaf green as subtle supporting accent
+  - Premium, minimal, India-inspired without being loud
+*/
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
+
+  --mx-orange: #f97316;
+  --mx-orange-dark: #ea580c;
+  --mx-orange-soft: #fff7ed;
+
+  --mx-green: #22c55e;
+  --mx-green-dark: #15803d;
+  --mx-green-soft: #ecfdf5;
+
+  --mx-slate: #0f172a;
+  --mx-slate-soft: #334155;
+  --mx-muted: #64748b;
+  --mx-border: #e2e8f0;
+
+  --mx-card: #ffffff;
+  --mx-section: #f8fafc;
+
+  --mx-shadow-soft: 0 18px 60px rgba(15, 23, 42, 0.08);
+  --mx-shadow-button: 0 14px 34px rgba(249, 115, 22, 0.28);
 }
 
 @theme inline {
@@ -12,15 +41,256 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
-  background: var(--background);
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(249, 115, 22, 0.08), transparent 32rem),
+    radial-gradient(circle at bottom left, rgba(34, 197, 94, 0.06), transparent 28rem),
+    var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--mx-orange);
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Premium reusable utilities */
+
+.mx-container {
+  width: min(100% - 2rem, 80rem);
+  margin-inline: auto;
+}
+
+.mx-section {
+  padding-block: 6rem;
+}
+
+.mx-section-soft {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.mx-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(249, 115, 22, 0.22);
+  background: rgba(255, 247, 237, 0.92);
+  color: var(--mx-orange-dark);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.mx-heading-xl {
+  color: var(--mx-slate);
+  letter-spacing: -0.055em;
+  font-weight: 800;
+  line-height: 0.98;
+}
+
+.mx-heading-section {
+  color: var(--mx-slate);
+  letter-spacing: -0.04em;
+  font-weight: 750;
+  line-height: 1.05;
+}
+
+.mx-body-lg {
+  color: var(--mx-slate-soft);
+  line-height: 1.8;
+}
+
+.mx-muted {
+  color: var(--mx-muted);
+}
+
+.mx-button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--mx-orange);
+  color: white;
+  font-weight: 700;
+  box-shadow: var(--mx-shadow-button);
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    background 260ms ease;
+}
+
+.mx-button-primary:hover {
+  background: var(--mx-orange-dark);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 20px 44px rgba(249, 115, 22, 0.34);
+}
+
+.mx-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--mx-border);
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--mx-slate-soft);
+  font-weight: 700;
+  transition:
+    border-color 240ms ease,
+    color 240ms ease,
+    transform 240ms ease,
+    background 240ms ease;
+}
+
+.mx-button-secondary:hover {
+  border-color: var(--mx-orange);
+  color: var(--mx-orange-dark);
+  background: white;
+  transform: translateY(-1px);
+}
+
+.mx-card {
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 1.5rem;
+  box-shadow: var(--mx-shadow-soft);
+  backdrop-filter: blur(18px);
+}
+
+.mx-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--mx-slate-soft);
+  padding: 0.55rem 0.9rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.mx-gradient-text {
+  background: linear-gradient(90deg, var(--mx-orange), var(--mx-green));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mx-logo-glow {
+  position: absolute;
+  inset: auto;
+  height: 26rem;
+  width: 26rem;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(249, 115, 22, 0.32), transparent 35%),
+    radial-gradient(circle at 65% 65%, rgba(34, 197, 94, 0.22), transparent 38%);
+  filter: blur(56px);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Motion */
+
+@keyframes mx-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes mx-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mx-animate-float {
+  animation: mx-float 7s ease-in-out infinite;
+}
+
+.mx-animate-fade-up {
+  animation: mx-fade-up 700ms ease both;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+  border: 2px solid #f8fafc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Responsive refinements */
+
+@media (max-width: 768px) {
+  .mx-section {
+    padding-block: 4rem;
+  }
+
+  .mx-heading-xl {
+    letter-spacing: -0.045em;
+    line-height: 1.02;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
 }
