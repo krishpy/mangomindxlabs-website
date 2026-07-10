@@ -19,7 +19,7 @@ export default function Navbar() {
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
         <a href="/" className="flex items-center">
           <Image
-            src="/images/logo.png"
+            src="/logo.png"
             alt="MangomindX Labs"
             width={240}
             height={80}
