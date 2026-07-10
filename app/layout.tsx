@@ -8,18 +8,37 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "MangomindX Labs",
+  metadataBase: new URL("https://mangomindlabs.com"),
+
+  title: "MangoMindX Labs",
+
   description:
     "Thoughtfully building products that improve everyday life.",
+
   keywords: [
-    "MangomindX",
+    "MangoMindX",
     "Bloomie",
     "FamFame",
     "ToneCheck",
   ],
-  authors: [{ name: "MangomindX Labs" }],
-  applicationName: "MangomindX Labs",
-  themeColor: "#F97316",
+
+  authors: [{ name: "MangoMindX Labs" }],
+  applicationName: "MangoMindX Labs",
+
+  icons: {
+    icon: [
+      {
+        url: "/icon.png?v=3",
+        type: "image/png",
+      },
+    ],
+    apple: [
+      {
+        url: "/apple-icon.png?v=3",
+        type: "image/png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
