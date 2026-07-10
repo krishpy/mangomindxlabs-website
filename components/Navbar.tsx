@@ -16,18 +16,19 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-        <a href="/" className="flex items-center gap-3" aria-label="MangomindX Labs home">
+        <a
+          href="/"
+          className="flex items-center"
+          aria-label="MangoMindX Labs home"
+        >
           <Image
-            src="/icon.png"
-            alt=""
-            width={56}
-            height={56}
-            className="h-14 w-14 rounded-2xl object-contain"
+            src="/logo.png"
+            alt="MangoMindX Labs"
+            width={240}
+            height={80}
+            className="h-auto w-[180px] object-contain sm:w-[220px]"
             priority
           />
-          <span className="hidden text-lg font-semibold tracking-tight text-slate-950 sm:inline">
-            MangoMindX Labs
-          </span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
