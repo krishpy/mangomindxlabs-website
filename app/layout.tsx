@@ -6,39 +6,19 @@ const geist = Geist({
   subsets: ["latin"],
   variable: "--font-geist-sans",
 });
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://mangomindlabs.com"),
-
   title: "MangoMindX Labs",
-
   description:
     "Thoughtfully building products that improve everyday life.",
-
   keywords: [
     "MangoMindX",
     "Bloomie",
     "FamFame",
     "ToneCheck",
   ],
-
   authors: [{ name: "MangoMindX Labs" }],
   applicationName: "MangoMindX Labs",
-
-  icons: {
-    icon: [
-      {
-        url: "/icon.png?v=3",
-        type: "image/png",
-      },
-    ],
-    apple: [
-      {
-        url: "/apple-icon.png?v=3",
-        type: "image/png",
-      },
-    ],
-  },
 };
 
 export default function RootLayout({
