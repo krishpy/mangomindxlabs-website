@@ -8,30 +8,27 @@ const navLinks = [
   { label: "Products", href: "/products" },
   { label: "About", href: "/about" },
   { label: "Careers", href: "/careers" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/85 backdrop-blur-xl">
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-        <a
-          href="/"
-          className="flex items-center"
-          aria-label="MangoMindX Labs home"
-        >
+        <a href="/" className="flex items-center">
           <Image
-            src="/logo.png"
-            alt="MangoMindX Labs"
+            src="/images/logo.png"
+            alt="MangomindX Labs"
             width={240}
             height={80}
-            className="h-auto w-[180px] object-contain sm:w-[220px]"
+            className="h-auto w-[165px] object-contain sm:w-[220px]"
             priority
           />
         </a>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-10 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.label}
